@@ -1,0 +1,14 @@
+{
+  "name": "pet-care-management",
+  "version": "1.0.0",
+  "description": "Pet Care Management System",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0"
+  }
+}

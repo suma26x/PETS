@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Our Pet Care Services</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="pets.html">Pet Details</a>
+    <a href="services.html">Services</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="content">
+    <h2>Available Services</h2>
+    <div id="serviceList"></div>
+</div>
+
+<script>
+fetch('/services')
+.then(response => response.json())
+.then(data => {
+    let output = '';
+
+    data.forEach(service => {
+        output += `
+        <div class="service-card">
+            <h3>${service.service_name}</h3>
+            <p>Price: ₹${service.price}</p>
+        </div>`;
+    });
+
+    document.getElementById('serviceList').innerHTML = output;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Book Pet Appointment</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="pets.html">Pet Details</a>
+    <a href="services.html">Services</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="form-box">
+    <h2>Appointment Form</h2>
+
+    <form action="/appointment" method="POST">
+
+        <label>Pet ID</label>
+        <input type="number" name="pet_id"
+        placeholder="Enter Registered Pet ID" min="1" required>
+
+        <label>Doctor ID</label>
+        <select name="doctor_id" required>
+            <option value="">Select Doctor</option>
+            <option value="1">Dr. Kumar</option>
+            <option value="2">Dr. Priya</option>
+        </select>
+
+        <label>Appointment Date</label>
+        <input type="date" name="appointment_date" required>
+
+        <label>Description</label>
+        <textarea name="description"
+        placeholder="Enter your problem" required></textarea>
+
+        <button type="submit">Book Appointment</button>
+
+    </form>
+</div>
+
+</body>
+</html>

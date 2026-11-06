@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Registered Pets</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="pets.html">Pet Details</a>
+    <a href="services.html">Services</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="content">
+    <h2>Our Pet Records</h2>
+
+    <table id="petTable">
+        <thead>
+            <tr>
+                <th>Pet ID</th>
+                <th>Pet Name</th>
+                <th>Type</th>
+                <th>Breed</th>
+                <th>Age</th>
+                <th>Owner</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+fetch('/pets')
+.then(response => response.json())
+.then(data => {
+    let rows = '';
+
+    data.forEach(pet => {
+        rows += `
+        <tr>
+            <td>${pet.pet_id}</td>
+            <td>${pet.pet_name}</td>
+            <td>${pet.pet_type}</td>
+            <td>${pet.breed}</td>
+            <td>${pet.age}</td>
+            <td>${pet.owner_name}</td>
+        </tr>`;
+    });
+
+    document.querySelector('#petTable tbody').innerHTML = rows;
+})
+.catch(error => console.log(error));
+</script>
+
+</body>
+</html>

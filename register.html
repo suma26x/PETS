@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Pet Registration</h1>
+    <p>Register Your Lovely Pet</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="pets.html">Pet Details</a>
+    <a href="services.html">Services</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="form-box">
+    <h2>Owner and Pet Details</h2>
+
+    <form action="/register" method="POST">
+
+        <h3>Owner Details</h3>
+        <input type="text" name="owner_name"
+        placeholder="Owner Name" required>
+
+        <input type="tel" name="phone"
+        placeholder="Phone Number" required>
+
+        <input type="email" name="email"
+        placeholder="Email" required>
+
+        <input type="text" name="address"
+        placeholder="Address" required>
+
+        <h3>Pet Details</h3>
+
+        <input type="text" name="pet_name"
+        placeholder="Pet Name" required>
+
+        <select name="pet_type" required>
+            <option value="">Select Pet Type</option>
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Rabbit</option>
+            <option>Bird</option>
+        </select>
+
+        <input type="text" name="breed"
+        placeholder="Pet Breed" required>
+
+        <input type="number" name="age"
+        placeholder="Pet Age" min="0" required>
+
+        <button type="submit">Register Pet</button>
+
+    </form>
+</div>
+
+</body>
+</html>
